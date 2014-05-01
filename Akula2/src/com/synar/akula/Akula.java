@@ -1,12 +1,14 @@
 package com.synar.akula;
 
 import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
+
 
 import org.apache.commons.cli.BasicParser;
 import org.apache.commons.cli.CommandLine;
@@ -16,6 +18,7 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+
 import org.apache.commons.io.monitor.FileAlterationListener;
 import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
 import org.apache.commons.io.monitor.FileAlterationMonitor;
@@ -24,11 +27,13 @@ import org.apache.commons.io.monitor.FileAlterationObserver;
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 
+
 import com.synar.akula.hardware.Datacenter;
 import com.synar.akula.software.Thread;
 
 public class Akula
 {
+
 	static FileAlterationMonitor	monitor;
 
 	public static void main(String[] args)
@@ -57,6 +62,7 @@ public class Akula
 
 			CSVReader jobsFileReader;
 			List<String[]> jobs = null;
+
 
 			int racksNumber = 40;
 			int machinesNumber = 10;
@@ -96,6 +102,7 @@ public class Akula
 						jobsFileReader = new CSVReader(new FileReader(jobsFile), ',', '\"', 0);
 						jobs = jobsFileReader.readAll();
 					}
+
 				}
 
 				{
@@ -164,6 +171,7 @@ public class Akula
 					System.exit(0);
 				}
 
+
 				if (line.hasOption('r'))
 				{
 					try
@@ -189,6 +197,7 @@ public class Akula
 						throw new ParseException("Not an integer value " + s);
 					}
 				}
+
 
 				if (line.hasOption('d'))
 				{
@@ -232,6 +241,7 @@ public class Akula
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+
 
 			System.out.println("Starting simulation");
 
