@@ -17,21 +17,27 @@
  * specific language governing permissions and limitations under the License.
  *
  **********************************************************************************************************************/
-package com.synar.akula;
-/*
- * Used to keep track of how threads were scheduled to be able to reconstruct.
- */
-public class HistoryNode {
+package com.synar.akula.utils;
 
-	public double		mTime;
-	public int			mMemMomainId;
-	public int			mMoreId;
-	public HistoryNode mNext; //pointer to next node in list.
-	
-	/*
-	 * Only used by the bootstrap module where degradations are known on
-	 * a per tick basis.
+/**
+ * This class is responsible for handling input arguments.
+ * It processes command line arguments
+ * @author Evgeny Vinnik
+ *
+ */
+public class InputReader
+{
+
+	/**
+	 * Class constructors
 	 */
-	public double	mPerfDegrad;
- 
+	public InputReader()
+	{
+		
+	}
+	
+	public boolean parse(String[] args)
+	{
+		return false;
+	}
 }
